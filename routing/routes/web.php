@@ -33,3 +33,10 @@ Route::get('users/{id}', function ($id) {
 
     return "GET parameter, name=" . $id;
 });
+
+//Send user name inside with blade system
+Route::get('/user', function () {
+
+    $username = 'Ahmed E';
+    return view('user', compact('username'));
+});
