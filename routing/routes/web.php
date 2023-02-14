@@ -18,6 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('users', function (Request $request) {
-    return $request;
+// Route::post('users', function (Request $request) {
+//     return $request;
+// });
+
+//This helps for checking from authentication
+Route::get('users/{id}', function ($id) {
+
+    if ($id == 1) {
+        return 'Admin';
+    } else {
+        return 'user';
+    }
+
+    return "GET parameter, name=" . $id;
 });
