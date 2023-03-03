@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', function () {
-    $post = 'new post';
 
-    return view('posts', compact('post'));
+//Routing using this way
+Route::get('posts', [PostController::class, 'showUser']);
+Route::get('posts/create', [PostController::class, 'createPost']);
+
+//Or using this way
+Route::controller(PostController::class)->group(function () {
+
+    Route::get('posts', 'showUser');
+    Route::get('posts/create', 'createPost');
 });
