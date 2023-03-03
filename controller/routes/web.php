@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posts', function () {
+    $post = 'new post';
+
+    return view('posts', compact('post'));
+});
