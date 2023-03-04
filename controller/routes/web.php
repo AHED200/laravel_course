@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,7 @@ Route::controller(PostController::class)->group(function () {
     Route::get('posts', 'showUser');
     Route::get('posts/create', 'createPost');
 });
+
+
+//Go to UserController(With Resource)
+Route::resource('user', UserController::class);
