@@ -32,5 +32,14 @@ Route::controller(PostController::class)->group(function () {
 });
 
 
-//Go to UserController(With Resource)
-Route::resource('user', UserController::class);
+/**
+ * Go to UserController(With Resource)
+ * 
+ * Expect is used to block a function from the resource in the request
+ * In example here we prevent access to create function
+ * There are another thing called only
+ * ->only([])
+ * */
+Route::resource('user', UserController::class)->except([
+    "create",
+]);
