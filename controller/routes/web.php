@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,6 @@ Route::get('posts/create', [PostController::class, 'createPost']);
 
 //Or using this way
 Route::controller(PostController::class)->group(function () {
-
     Route::get('posts', 'showUser');
     Route::get('posts/create', 'createPost');
 });
@@ -43,3 +43,9 @@ Route::controller(PostController::class)->group(function () {
 Route::resource('user', UserController::class)->except([
     "create",
 ]);
+
+
+/**
+ * Route to invocable controller
+ */
+Route::get('user_profile', UserProfileController::class);
