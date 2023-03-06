@@ -21,4 +21,10 @@ class PostController extends Controller
 
         return response('The post added successfully');
     }
+
+    public function index()
+    {
+        $posts = DB::table('posts')->get();
+        return view('posts.index', compact('posts'));
+    }
 }
