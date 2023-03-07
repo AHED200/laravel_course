@@ -38,7 +38,7 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
-        $post = DB::table('posts')
+        DB::table('posts')
             ->where('id', $id)
             ->update([
                 'title' => $request->title,
@@ -50,9 +50,15 @@ class PostController extends Controller
 
     public function delete($id)
     {
-        $post = DB::table('posts')
+        DB::table('posts')
             ->where('id', $id)
             ->delete();
+        return redirect()->route('posts');
+    }
+
+    public function deleteAll()
+    {
+        DB::table('posts')->delete();
         return redirect()->route('posts');
     }
 }

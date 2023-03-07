@@ -36,6 +36,7 @@
         </tbody>
 
     </table>
+    <a class="btn btn-danger" href="{{ route('posts.delete.all') }}" role="button">Delete All</a>
 
 </body>
 
