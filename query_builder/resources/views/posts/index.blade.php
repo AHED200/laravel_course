@@ -29,7 +29,7 @@
                     <td>{{ $post->body }}</td>
                     <td>
                         <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}" role="button">Edit</a>
-                        <a class="btn btn-danger" href="#" role="button">Delete</a>
+                        <a class="btn btn-danger" href="{{ route('post.delete', $post->id) }}" role="button">Delete</a>
                     </td>
                 </tr>
             @endforeach
