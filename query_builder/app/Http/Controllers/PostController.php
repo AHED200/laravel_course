@@ -27,4 +27,12 @@ class PostController extends Controller
         $posts = DB::table('posts')->get();
         return view('posts.index', compact('posts'));
     }
+
+    public function edit($id)
+    {
+        $post = DB::table('posts')
+            ->where('id', $id)
+            ->first();
+        return view('posts.edit', compact('post'));
+    }
 }

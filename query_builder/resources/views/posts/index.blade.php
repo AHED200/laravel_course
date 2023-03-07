@@ -17,19 +17,20 @@
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
-
+                <th scope="col">Process</th>
             </tr>
         </thead>
 
         <tbody>
             @foreach ($posts as $post)
                 <tr>
-
-
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->body }}</td>
-
+                    <td>
+                        <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}" role="button">Edit</a>
+                        <a class="btn btn-danger" href="#" role="button">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
