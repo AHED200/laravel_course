@@ -1,7 +1,8 @@
-<h1>Edit post</h1>
+<h1>Edit post: {{ $post->title }}</h1>
 
-<form method="post" action="">
+<form method="POST" action="{{ route('post.update', $post->id) }}">
     @csrf
+    @method('PUT')
     <input type="text" name="title" value="{{ $post->title }}">
     <br><br>
     <input type="text" name="body" value="{{ $post->body }}">

@@ -35,4 +35,16 @@ class PostController extends Controller
             ->first();
         return view('posts.edit', compact('post'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $post = DB::table('posts')
+            ->where('id', $id)
+            ->update([
+                'title' => $request->title,
+                'body' => $request->body
+            ]);
+
+        return redirect()->route('posts');
+    }
 }
