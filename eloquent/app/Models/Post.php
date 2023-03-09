@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    //You can use this
+    protected $fillable = ['title', 'body'];
+    //OR this
+    // protected $guarded = [];
 }

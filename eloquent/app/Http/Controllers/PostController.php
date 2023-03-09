@@ -28,11 +28,27 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->title = $request->title;
-        $post->body = $request->body;
+        /**
+         * First way to store data  
+         */
+        // $post = new Post();
+        // $post->title = $request->title;
+        // $post->body = $request->body;
 
-        $post->save();
+        // $post->save();
+
+
+        Post::create(
+            //Using this
+            // [
+            //  'title' => $request->title,
+            //  'body' => $request->body,
+            // ]
+
+            //OR this, but should the names in the form input should be same as the names of the model 
+            $request->all()
+        );
+
 
         return response('تم اضافة البيانات بنجاح');
     }
