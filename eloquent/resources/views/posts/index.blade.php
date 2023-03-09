@@ -11,7 +11,7 @@
 <body>
 
 
-    {{-- <table class="table">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -28,16 +28,17 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->body }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}" role="button">Edit</a>
-                        <a class="btn btn-danger" href="{{ route('post.delete', $post->id) }}" role="button">Delete</a>
+                        <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}" role="button">Edit</a>
+                        <a class="btn btn-danger" href="{{ route('posts.destroy', $post->id) }}"
+                            role="button">Delete</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
 
     </table>
-    
-    <center> <a class="btn btn-danger" href="{{ route('posts.delete.all') }}" role="button">Delete All</a></center>
+
+    {{-- <center> <a class="btn btn-danger" href="{{ route('posts.delete.all') }}" role="button">Delete All</a></center>
     <center> <a class="btn btn-danger" href="{{ route('posts.delete.all.truncate') }}" role="button">Delete All
             TrunCate</a>
     </center> --}}
