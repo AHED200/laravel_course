@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));;
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -75,9 +75,18 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::findorFail($id);
+
+        $post->update(
+            [
+                'title' => $request->title,
+                'body' => $request->body,
+            ]
+        );
+
+        return redirect()->route('posts.index');
     }
 
     /**
