@@ -28,7 +28,8 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->body }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}" role="button">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('posts.restore', $post->id) }}"
+                            role="button">Restore</a>
 
                         <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
                             @method('Delete')

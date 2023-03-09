@@ -98,4 +98,11 @@ class PostController extends Controller
         $post = Post::findorFail($id)->delete();
         return redirect()->route('posts.index');
     }
+
+    public function restore($id)
+    {
+        Post::withTrashed()->where('id', $id)->restore();
+
+        return redirect()->route('posts.index');
+    }
 }
