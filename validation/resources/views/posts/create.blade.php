@@ -16,14 +16,14 @@
         @method('post')
         @csrf
         <input name="title" id="title" type="text" placeholder="Enter title"
-            class="@error('title') is-invalid @enderror">
+            class="@error('title') is-invalid @enderror" value="{{ old('title') }}">
         @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <br><br>
 
         <input name="body" id="body" type="text" placeholder="Enter body"
-            class="@error('body') is-invalid @enderror">
+            class="@error('body') is-invalid @enderror" value="{{ old('body') }}">
         @error('body')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
