@@ -102,14 +102,18 @@ class PostController extends Controller
     public function restore($id)
     {
         Post::withTrashed()->where('id', $id)->restore();
-
         return redirect()->route('posts.index');
     }
 
     public function forceDelete($id)
     {
         Post::withTrashed()->where('id', $id)->forceDelete();
-
         return redirect()->route('posts.index');
+    }
+
+    public function modelScope()
+    {
+        $posts = Post::ahmed()->first();
+        return $posts;
     }
 }

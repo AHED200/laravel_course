@@ -16,4 +16,9 @@ class Post extends Model
     // protected $guarded = [];
 
     use SoftDeletes;
+
+    public function scopeAhmed($query)
+    {
+        return $query->where('body', 'searched body');
+    }
 }
