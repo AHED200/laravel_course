@@ -31,10 +31,10 @@
                         <a class="btn btn-primary" href="{{ route('posts.restore', $post->id) }}"
                             role="button">Restore</a>
 
-                        <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                        <form method="get" action="{{ route('posts.forcedelete', $post->id) }}">
                             @method('Delete')
                             @csrf
-                            <button type="submit" class="btn btn-danger" action role="button">Delete</a>
+                            <button type="submit" class="btn btn-danger" action role="button">Fource Delete</a>
                         </form>
 
                     </td>
