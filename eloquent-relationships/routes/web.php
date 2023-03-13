@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('users', [UserController::class, 'index']);
 Route::get('posts', [PostController::class, 'index']);
+Route::get('users-roles', [UserController::class, 'roles']);

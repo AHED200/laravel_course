@@ -2,38 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Phone;
 use App\Models\Role;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $user = User::find(1)->phone;
-        $phone = Phone::find(3)->user;
-
-        return $phone;
-    }
-
-    public function roles()
-    {
-        /**
-         * Return user with his roles
-         */
-        // $user = User::find(1)->roles;
-        // return $user;
-
-
-        /**
-         * Return roles of the selected user
-         */
-        $roles = Role::find(2)->users;
-        return $roles;
+        //
     }
 
     /**
@@ -55,7 +34,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Role $role)
     {
         //
     }
@@ -63,7 +42,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Role $role)
     {
         //
     }
@@ -71,7 +50,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -79,7 +58,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Role $role)
     {
         //
     }

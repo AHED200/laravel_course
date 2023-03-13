@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Phone::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user_pivot');
+    }
 }
