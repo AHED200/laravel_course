@@ -17,7 +17,7 @@ This repository contains all projects that I create during my trip to learn the 
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ## Contributing
 
-I would to thank Sameer Jamal who created Laravel tutorials on his YouTube channel. 
+I would to thank Samir Gamal who created Laravel tutorials on his YouTube channel. 
 
 The projects on this repository here built from the below YouTube channel.
 
