@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 
 Route::get('user/{id}', [UserController::class, 'index']);
+Route::get('create', [UserController::class, 'store']);

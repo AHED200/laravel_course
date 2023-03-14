@@ -46,16 +46,16 @@ class User extends Authenticatable
 
 
     /**
-     * Accessor
+     * Accessor&Mutator
      */
     protected function Name(): Attribute
     {
         return Attribute::make(
+            // Accessor
             get: fn ($value) => ucfirst($value),
+
+            // Mutator
+            set: fn ($value) => ucfirst($value)
         );
     }
-
-    /**
-     * Mutator
-     */
 }

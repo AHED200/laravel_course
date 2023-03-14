@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+use function PHPSTORM_META\map;
 
 class UserController extends Controller
 {
@@ -30,7 +33,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => 'ali',
+            'email' => 'mutator_aali@aaa.com',
+            'password' => Hash::make('ali454546')
+        ]);
+
+        return response('User created successfully.');
     }
 
     /**
