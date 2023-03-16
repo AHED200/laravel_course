@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\TestMail;
+use App\Mail\TestMailMarkdown;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,11 @@ Route::get('/', function () {
 
 Route::get('send', function () {
     Mail::to('taylor@example.com')->send(new TestMail());
+    return response('The mail sent successfully');
+});
+
+Route::get('send-m', function () {
+    $user = "Islam";
+    Mail::to('taylor@example.com')->send(new TestMailMarkdown($user));
     return response('The mail sent successfully');
 });
