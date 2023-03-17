@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Notifications\CreatePost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 
 class PostController extends Controller
@@ -48,9 +49,15 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($postId)
     {
-        //
+        $post = Post::findorFail($postId);
+        $notificationId = DB::table('notifications')->where('data->post_id', $postId)->pluck('id');
+
+        //Mark notifications as read
+        DB::table('notifications')->where('id', $notificationId)->update(['read_at' => now()]);
+
+        return $post;
     }
 
     /**

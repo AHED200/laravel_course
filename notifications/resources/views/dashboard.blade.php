@@ -49,14 +49,12 @@
                                     @foreach (Auth::User()->unreadNotifications as $notifcation)
                                         <li class="notification-box">
                                             <div class="row">
-                                                <div class="col-lg-3 col-sm-3 col-3 text-center">
-                                                    <img src="/demo/man-profile.jpg" class="w-50 rounded-circle">
-                                                </div>
                                                 <div class="col-lg-8 col-sm-8 col-8">
                                                     <strong
                                                         class="text-info">{{ $notifcation->data['user_created'] }}</strong>
                                                     <div>
-                                                        {{ $notifcation->data['post_title'] }}
+                                                        <a
+                                                            href="{{ route('posts.show', $notifcation->data['post_id']) }}">{{ $notifcation->data['post_title'] }}</a>
                                                     </div>
                                                     <small class="text-warning">{{ $notifcation->created_at }}</small>
                                                 </div>
