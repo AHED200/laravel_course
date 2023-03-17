@@ -12,14 +12,16 @@ class CreatePost extends Notification
     use Queueable;
 
     private $postId;
+    private $postTitle;
     private $user;
     /**
      * Create a new notification instance.
      */
-    public function __construct($postId, $user)
+    public function __construct($postId, $postTitle, $user)
     {
-        $this->$postId = $postId;
-        $this->$user = $user;
+        $this->postId = $postId;
+        $this->user = $user;
+        $this->postTitle = $postTitle;
     }
 
     /**
@@ -43,8 +45,8 @@ class CreatePost extends Notification
     {
         return [
             'post_id' => $this->postId,
+            'post_title' => $this->postTitle,
             'user_created' => $this->user,
-
         ];
     }
 }
