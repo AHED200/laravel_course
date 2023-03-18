@@ -42,7 +42,9 @@
                                             <div class="col-lg-12 col-sm-12 col-12">
                                                 <span>Notifications
                                                     {{ Auth::User()->unreadNotifications->count() }}</span>
-                                                <a href="" class="float-right text-light">Mark all as read</a>
+                                                <a href="{{ route('notification.readall') }}"
+                                                    class="float-right text-light">Mark all as
+                                                    read</a>
                                             </div>
                                     </li>
 

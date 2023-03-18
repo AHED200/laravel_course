@@ -83,4 +83,15 @@ class PostController extends Controller
     {
         //
     }
+
+    public function markAsRead()
+    {
+        $user = User::find(auth()->user()->id);
+
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
+
+        return redirect()->back();
+    }
 }

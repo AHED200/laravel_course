@@ -31,4 +31,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('posts', PostController::class);
 
+Route::get('notification/markasread', [PostController::class, 'markAsRead'])->name('notification.readall');
+
 require __DIR__ . '/auth.php';
