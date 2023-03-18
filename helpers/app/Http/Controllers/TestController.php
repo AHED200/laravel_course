@@ -16,5 +16,9 @@ class TestController extends Controller
         // return abort('500');
 
 
+        /**
+         * Use my custom helper
+         */
+        return User::where('id', userId())->get();
     }
 }
