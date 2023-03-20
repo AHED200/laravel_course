@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\ActiveUsersJob;
+use App\Jobs\SendMailJob;
+use App\Mail\SendMailUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -31,6 +34,16 @@ class UserController extends Controller
          * Using queue
          */
         ActiveUsersJob::dispatch();
+        return "The job is working now";
+    }
+
+    public function sendMail()
+    {
+        $emails = [
+            "test@example.com", "test@example.com", "test@example.com",
+        ];
+        SendMailJob::dispatch($emails);
+
         return "The job is working now";
     }
 }
