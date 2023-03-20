@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadImage;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,3 +23,6 @@ Route::get('store', function () {
     Storage::disk('custom_path')->put('example.txt', 'Contents');
     return "The file stored successfully";
 });
+
+Route::get('upload', [UploadImage::class, 'uploadFrom']);
+Route::post('store-image', [UploadImage::class, 'store'])->name('store-image');
